@@ -19,7 +19,7 @@ int main() {
 	imprimir(vet);
 
 	for (int i = 1; i < N; i++) { // A partir do segundo elemento
-			aux = vet[i]; // Copia do elemento a ser movido
+		aux = vet[i]; // Copia do elemento a ser movido
 		j = i - 1; // Posicao anterior ao elemento a ser movido
 		// Ate encontrar em elemento menor que aux ou ate a 1a posicao
 		while (j >= 0 && vet[j] > aux) { 
