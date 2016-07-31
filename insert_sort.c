@@ -1,3 +1,7 @@
+/*
+* Insertion sort
+* Author: Alexandre A. A. M de Abreu
+*/
 #include<stdio.h>
 
 #define N 10
