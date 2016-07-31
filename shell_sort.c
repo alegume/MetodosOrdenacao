@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-#define N 15
+#define N 6
 
 void imprimir(int vet[]) {
 	for (int i = 0; i < N; i++)
@@ -8,19 +8,22 @@ void imprimir(int vet[]) {
 	printf("\n");
 }
 
-void inicializar(int *vet) {
-	for (int i = N - 1; i >= 0; i--)
-		vet[i] = N - i;
-}
-
 int main() {
-	int vet[N], aux;
-	inicializar(&vet[0]);
+	int vet[N] = {6, 3, 9, 7, 4, 1};
+	int aux, i, j, h;
 	imprimir(vet);
 
-	for (int i = 0; i < N - 1; i++) { // O ultimo elemento ja estara em sua posicao
-		
-	}
+    for (h = N; h /= 2; ) { // h decrementa pela metade
+        for (i = h; i < N; i++) {
+        	//imprimir(vet); // Apenas imprime para acompanhar
+            aux = vet[i]; // Auxiliar para a troca
+            // J 'percorre' os multiplos de h (decrescente)
+            for (j = i; j >= h && aux < vet[j - h]; j -= h) { 
+                vet[j] = vet[j - h]; // Desloca os elementos em posicao multipla de h
+            }
+            vet[j] = aux; // Faz a troca
+        }
+    }
 
 	imprimir(vet);
 
